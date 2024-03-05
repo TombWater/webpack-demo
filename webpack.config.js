@@ -9,7 +9,7 @@ module.exports = {
         index: './src/index.js',
         print: './src/print.js',
     },
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     devServer: {
         static: './dist',
     },
@@ -20,7 +20,8 @@ module.exports = {
             title: 'Development',
         }),
         new WebpackObfuscator({
-            rotateStringArray: true
+            rotateStringArray: true,
+            sourceMap: true,
         }, ['excluded_bundle_name.js']),
     ],
     output: {
