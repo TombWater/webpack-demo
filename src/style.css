@@ -1,4 +1,13 @@
+@font-face {
+    font-family: 'Anta';
+    src: url('./Anta-Regular.woff2') format('woff2'),
+      url('./Anta-Regular.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+  }
+
 .hello {
     color: red;
+    font-family: 'Anta';
     background: url('./icon.png');
 }
