@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {WebpackManifestPlugin} = require('webpack-manifest-plugin');
+const WebpackObfuscator = require('webpack-obfuscator');
 
 module.exports = {
     mode: 'development',
@@ -18,6 +19,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Development',
         }),
+        new WebpackObfuscator({
+            rotateStringArray: true
+        }, ['excluded_bundle_name.js']),
     ],
     output: {
         filename: '[name].bundle.js',
